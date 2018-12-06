@@ -20,10 +20,10 @@ public class HygieiaSparkConnection {
                 .master("local")
                 .appName("HygieiaPortfolioCollector")
                 .config("spark.mongodb.input.uri", this.readUri)
-                .config("spark.mongodb.input.database", readDatabase)
+                .config("spark.mongodb.input.database", this.readDatabase)
                 .config("spark.mongodb.input.collection", "dummy")
-                .config("spark.mongodb.output.uri", writeUri)
-                .config("spark.mongodb.output.database", writeDatabase)
+                .config("spark.mongodb.output.uri", this.writeUri)
+                .config("spark.mongodb.output.database", this.writeDatabase)
                 .config("spark.mongodb.output.collection", "dummy")
                 .getOrCreate();
     }
